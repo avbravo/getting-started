@@ -7,15 +7,13 @@ package org.acme.repository;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.repository.CrudRepository;
-import org.acme.model.Humanoide;
-
+import org.acme.model.Habitante;
 
 /**
  *
  * @author avbravo
  */
-@Repository(entity=Humanoide.class,jakartaSource = JakartaSource.JAVAEE_LEGACY)
-public interface HumanoideRepository  extends CrudRepository<Humanoide, String>{
-    
+@Repository(entity = Habitante.class, jakartaSource = JakartaSource.JAVAEE_LEGACY)
+public interface HabitanteRepository extends CrudRepository<Habitante,String>{
     
 }
