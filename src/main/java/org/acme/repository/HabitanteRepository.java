@@ -15,5 +15,5 @@ import org.acme.model.Habitante;
  */
 @Repository(entity = Habitante.class, jakartaSource = JakartaSource.JAVAEE_LEGACY)
 public interface HabitanteRepository extends CrudRepository<Habitante,String>{
-    
+  
 }

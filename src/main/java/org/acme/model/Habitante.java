@@ -18,8 +18,7 @@ import com.jmoordb.core.annotation.enumerations.TypeReferenced;
 public class Habitante {
     @Id
     private String idhabitante;
-   @Referenced(from = "persona", localField = "persona.idpersona",typeReferenced = TypeReferenced.REFERENCED)
-    //@Embedded
+   @Referenced(from = "persona", localField = "persona.idpersona",typeReferenced = TypeReferenced.EMBEDDED)
     Persona persona;
 
     public Habitante() {
