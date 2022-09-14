@@ -15,7 +15,7 @@ import com.jmoordb.core.annotation.enumerations.JakartaSource;
  *
  * @author avbravo
  */
- @DocumentEmbeddable(jakartaSource = JakartaSource.JAVAEE_LEGACY )
+@DocumentEmbeddable(jakartaSource = JakartaSource.JAVAEE_LEGACY )
 public class Idioma {
        @Id
        private String ididioma;
