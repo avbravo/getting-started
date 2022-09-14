@@ -7,8 +7,10 @@ package org.acme.model;
 import com.jmoordb.core.annotation.Embedded;
 import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
+import com.jmoordb.core.annotation.Referenced;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import java.util.stream.Stream;
+import com.jmoordb.core.annotation.enumerations.TypeReferenced;
+import java.util.Set;
 
 /**
  *
@@ -18,20 +20,27 @@ import java.util.stream.Stream;
 public class Habitante {
     @Id
     private String idhabitante;
-//   @Referenced(from = "persona", localField = "persona.idpersona",typeReferenced = TypeReferenced.EMBEDDED)
+
     @Embedded
-   Stream<Persona> persona;
+   Set<Persona> persona;
     
     @Embedded
     Idioma idioma;
+    
+    @Referenced(from = "pais", localField = "idpais",typeReferenced = TypeReferenced.REFERENCED)
+    Set<Pais> pais;
 
     public Habitante() {
     }
 
-    public Habitante(String idhabitante, Stream<Persona> persona) {
+    public Habitante(String idhabitante, Set<Persona> persona, Idioma idioma, Set<Pais> pais) {
         this.idhabitante = idhabitante;
         this.persona = persona;
+        this.idioma = idioma;
+        this.pais = pais;
     }
+
+   
 
     public String getIdhabitante() {
         return idhabitante;
@@ -41,11 +50,11 @@ public class Habitante {
         this.idhabitante = idhabitante;
     }
 
-    public Stream<Persona> getPersona() {
+    public Set<Persona> getPersona() {
         return persona;
     }
 
-    public void setPersona(Stream<Persona> persona) {
+    public void setPersona(Set<Persona> persona) {
         this.persona = persona;
     }
 
@@ -55,6 +64,14 @@ public class Habitante {
 
     public void setIdioma(Idioma idioma) {
         this.idioma = idioma;
+    }
+
+    public Set<Pais> getPais() {
+        return pais;
+    }
+
+    public void setPais(Set<Pais> pais) {
+        this.pais = pais;
     }
    
     

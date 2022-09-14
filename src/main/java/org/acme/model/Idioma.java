@@ -6,9 +6,10 @@ package org.acme.model;
 
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.DocumentEmbeddable;
-import com.jmoordb.core.annotation.Embedded;
 import com.jmoordb.core.annotation.Id;
+import com.jmoordb.core.annotation.Referenced;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+
 
 /**
  *
@@ -20,7 +21,7 @@ public class Idioma {
        private String ididioma;
        @Column
        private String idioma;
-       @Embedded
+       @Referenced(from = "cultura", localField = "idcultura")
        private Cultura cultura;
 
     public Idioma() {
